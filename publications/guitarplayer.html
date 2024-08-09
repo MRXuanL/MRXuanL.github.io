@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning to Play Guitar with Robotic Hands</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4; /* 页面背景色 */
+            overflow: auto;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        img{
+            width: 80%;
+            margin:0 auto;
+            display:flex;
+        }
+        .papertitle p{
+            font-size:small;
+        }
+        .container {
+            background-color: rgb(243, 239, 235);
+            align-items: center;
+            width: 80%;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+           /* min-height: 90vh; /* 保证容器的最小高度，确保背景色延伸到页面底部 */
+        }
+        .authorinfo{
+            display: flex;
+            align-content: center;
+        }
+        .authorbox{
+            float:right;
+            width: 100%;
+        }
+        .authorbox p{
+            text-align: center;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="papertitle">
+            <p style="text-align: center;">ACM SIGGRAPH / Eurographics Symposium on Computer Animation (SCA) 2024</p>
+            <p style="text-align: center;">MCGILL UNIVERSITY, MONTREAL, CANADA</p>
+            <H1 style="text-align: center;">Learning to Play Guitar with Robotic Hands</H1>
+            <div class="authorinfo">
+                <div class="authorbox">
+                    <p><a href="https://mrxuanl.github.io/">Chaoyi Luo</a></p>
+                    <p>Shanghai University</p>
+                </div>
+                <div class="authorbox">
+                    <p><a href="https://tangpengbin.github.io/">Pengbin Tang</a></p>
+                    <p>ETH Zürich</p>
+                </div>
+                <div class="authorbox">
+                    <p>Yuqi Ma</p>                    
+                    <p>Shanghai University</p>
+                </div>
+                <div class="authorbox">
+                    <p>Dongjin Huang</p>
+                    <p>Shanghai University</p>
+                </div>
+            </div>
+            <p style="text-align: center;">[<a href="../papers/guitarplayer.html">Paper</a>][<a href="https://github.com/MRXuanL/GPS-GuitarPlaySimulation" >Code</a>]</p>
+        </div>
+        <div class="abstract">
+            <h2>Abstract</h2>
+            <p>
+                Playing the guitar is a dexterous human skill that poses significant challenges in computer graphics and robotics due to the
+                precision required in finger positioning and coordination between hands. Current methods often rely on motion capture data to
+                replicate specific guitar playing segments, which restricts the range of performances and demands intricate post-processing.
+                In this paper, we introduce a novel reinforcement learning model that can play the guitar using robotic hands, without the
+                need for motion capture datasets, from input tablatures. To achieve this, we divide the simulation task for playing guitar into
+                three stages. (a): for an input tablature, we first generate corresponding fingerings that align with human habits. (b): based
+                on the generated fingerings as the guidance, we train a neural network for controlling the fingers of the left hand using deep
+                reinforcement learning, and (c): we generate plucking movements for the right hand based on inverse kinematics according to
+                the tablature. We evaluate our method by employing precision, recall, and F1 scores as quantitative metrics to thoroughly assess
+                its performance in playing musical notes. In addition, we conduct qualitative analysis through user studies to evaluate the visual
+                and auditory effects of guitar performance. The results demonstrate that our model excels in playing most moderately difficult
+                and easier musical pieces, accurately playing nearly all notes.
+            </p>
+        </div>
+        <div class="overview">
+            <h2>Overview</h2>
+            <img src="../imgs/overview.png">
+            <p>
+               For a given input tablature, our system utilizes a brute-force algorithm to generate the fingering for playing the guitar. Subsequently, it employs Deep Reinforcement Learning (DRL) to train a policy to control the left hand pressing the strings, while using Inverse Kinematics (IK) to control the right hand plucking the strings.
+            </p>
+        </div>
+        <div class="results">
+            <h2>Results</h2>
+            <img src="../imgs/allsong.png">
+            <p>
+                We collect multiple pieces online as a training dataset. After testing, it is satisfying that most pieces achieve a
+                recall rate above 0.7, which means the majority of played pieces are accurately identified by the audience.
+            </p>
+        </div>
+        <div class="material" style="align-items: center;">
+            <h2>Video</h2>
+            <video width="80%"  style="margin:0 auto; display: block;" controls><source src="./guitarplayer.mp4" type="video/mp4"></video>
+        </div>
+
+    </div>
+</body>
+</html>
