@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title>GPS-GuitarPlaySimulation</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<!-- LOAD Tone.js from unpkg -->
+	<script src="https://unpkg.com/tone"></script>
+	<script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
+	<script type="importmap">
+		    { "imports": 
+				{ 
+					"three": "./node_modules/three/build/three.module.js", 
+					"three/addons/": "./node_modules/three/examples/jsm/",
+					"vexflow":"./node_modules/vexflow/build/esm/entry/vexflow.js"
+				} 
+			}
+		</script>
+	<link type="text/css" rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<div id="info" style="top: 0px;">
+		<a href="https://github.com/MRXuanL/GPS-GuitarPlaySimulation" target="_blank"
+			rel="noopener">GPS-GuitarPlaySimulation</a> Demo
+		<br>By <a href="https://mrxuanl.github.io/" target="_blank" rel="noopener">Chaoyi Luo</a>
+	</div>
+	<div id="info" style="top: 45px;">
+		Built with <a href="https://github.com/kevinzakka/robopianist-demo" target="_blank" rel="noopener">robopianist
+			demo</a>, <a href="https://github.com/zalo/mujoco_wasm/" target="_blank" rel="noopener">mujoco_wasm</a> and
+		<a href="https://threejs.org/" target="_blank" rel="noopener">three.js</a> ❤️
+	</div>
+	<div id="appbody" style="position: absolute;">
+		<script type="module" src="./examples/main.js"></script>
+	</div>
+
+
+	<!-- <div id="table" style=" bottom: 0px; width: 100%;  background-color: rgb(255, 255, 255);">
+	</div>
+	<div class="ui"
+		style=" bottom: 0px; right:0px; width: 5%;  background-color: rgba(255, 255, 255,0);display: flex; flex-direction: column; align-items: flex-start;">
+		<div style="display: flex; align-items: center;">
+			<select id="bpm">
+				<option value="60">60</option>
+				<option value="72">72</option>
+				<option value="81">81</option>
+				<option value="90">90</option>
+			</select>
+			<span style="margin-left: 5px; color:black">bpm</span>
+		</div>
+		<button id="addnote">add note</button>
+		<button id="addmeasure">add Measure</button>
+		<button id="reset">reset</button>	
+		<button id="play">play</button>
+	</div>
+	<div class="ui"
+		style=" bottom: 0px; right:0px; width: 15%;  background-color: rgba(255, 255, 255,0);  display: flex; flex-direction: column; align-items: flex-start;">
+		<div style="display: flex; align-items: center;">
+			<span style="margin-right: 5px; color:black">notetype</span>
+			<select id="notetype">
+				<option value="normal">normal</option>
+				<option value="rest">rest</option>
+			</select>
+		</div>
+
+		<div style="display: flex; align-items: center;">
+			<span style="margin-right: 5px; color:black">duration</span>
+			<select id="duration">
+				<option value="q">quarter</option>
+				<option value="w">whole</option>
+				<option value="h">half</option>
+				<option value="8">8</option>
+				<option value="16">16</option>
+			</select>
+		</div>
+		<div style="display: flex; align-items: center;">
+			<div id="inputTable" style="margin:20px;"></div>	
+			<div style="display: flex; flex-direction: column; align-items: flex-start;">
+				<input type="text" id="textbox" name="string1" size="2" maxlength="2" autocomplete="off"/>
+				<input type="text" id="textbox" name="string2" size="2" maxlength="2" autocomplete="off"/>
+				<input type="text" id="textbox" name="string3" size="2" maxlength="2" autocomplete="off"/>
+				<input type="text" id="textbox" name="string4" size="2" maxlength="2" autocomplete="off"/>
+				<input type="text" id="textbox" name="string5" size="2" maxlength="2" autocomplete="off"/>
+				<input type="text" id="textbox" name="string6" size="2" maxlength="2" autocomplete="off"/>
+			</div>
+		</div>
+	</div> -->
+</body>
+
+</html>
